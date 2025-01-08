@@ -22,7 +22,7 @@ const MyTransactions = ({ data }) => {
                                 <div className="hidden md:block text-gray-400 text-sm">{name}</div>
                             </div>
                         </div>
-                        <div className='md:flex items-center'>
+                        <div className='md:flex items-center space-x-2'>
                             <div className="hidden md:block text-right w-36">
                                 <div className="text-gray-400 text-sm">Quantity</div>
                                 <div className="font-bold">{quantity}x</div>
