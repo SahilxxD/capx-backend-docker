@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import MyTransactions from '../card/History';
 import { ToastContainer, toast } from 'react-toastify';
-import { formatDistanceToNow } from 'date-fns';
+import { formatDistanceToNow, addHours } from 'date-fns';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -27,9 +27,9 @@ const HistoryPage = () => {
             if (updatedData) {
                 const updatedPortfolio = updatedData.map((item) => {
                     const givenDate = new Date(item.date);
-
+                    const istDate = addHours(givenDate  , 5.5);
                     // Calculate the difference using date-fns
-                    const diffInWords = formatDistanceToNow(givenDate, { addSuffix: true });
+                    const diffInWords = formatDistanceToNow(istDate, { addSuffix: true });
                     // Return the updated item with the new 'date' field
                     return {
                         ...item,
