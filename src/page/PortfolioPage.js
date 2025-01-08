@@ -18,7 +18,7 @@ const PorfolioPage = () => {
 
         const apiUrl = process.env.REACT_APP_API_URL;
         try {
-            const response = await axios.get(`${apiUrl}/data/portfolio`, {
+            const response = await axios.get(`http://${apiUrl}/data/portfolio`, {
             });
 
             const updatedData = response.data;
@@ -145,7 +145,7 @@ const PorfolioPage = () => {
         const apiUrl = process.env.REACT_APP_API_URL;
         console.log("stock is added", stock, quantity, action);
         try {
-            const response = await axios.post(`${apiUrl}/portfolio/add`, {
+            const response = await axios.post(`http://${apiUrl}/portfolio/add`, {
                 body: {
                     symbol: stock.symbol,
                     name: stock.name,
@@ -233,7 +233,7 @@ const PorfolioPage = () => {
         console.log("stock is modified", stock, action, quantity);
         const apiUrl = process.env.REACT_APP_API_URL;
         try {
-            const response = await axios.post(`${apiUrl}/portfolio/update`, {
+            const response = await axios.post(`http://${apiUrl}/portfolio/update`, {
                 body: {
                     symbol: stock.symbol,
                     price: Math.round((stock.currentPrice ? stock.currentPrice : stock.price) * 100) / 100,
