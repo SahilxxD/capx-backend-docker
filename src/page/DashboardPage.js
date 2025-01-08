@@ -32,7 +32,7 @@ const StoicexDashboard = () => {
         console.log("REACT_APP_API_URL", apiUrl)
 
         try {
-            const response = await axios.get(`http://${apiUrl}/data/dashboard`, {
+            const response = await axios.get(`https://${apiUrl}/data/dashboard`, {
             });
 
             const updatedData = response.data;
