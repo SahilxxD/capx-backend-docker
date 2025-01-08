@@ -20,7 +20,7 @@ const HistoryPage = () => {
         });
         const apiUrl = process.env.REACT_APP_API_URL;
         try {
-            const response = await axios.get(`http://${apiUrl}/data/history`, {
+            const response = await axios.get(`https://${apiUrl}/data/history`, {
             });
 
             const updatedData = response.data;
