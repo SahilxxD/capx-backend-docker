@@ -13,12 +13,12 @@ const MyTransactions = ({ data }) => {
                 </div>
             </div>
             <div className="mt-4">
-                {data && data.map(({ symbol, name, industry, action, price, quantity, date }) => (
+                {data && data.map(({ symbol, name, industry, action, price, quantity, date, diffInWords }) => (
                     <div key={symbol} className="flex md:items-center justify-between py-2 border-b border-gray-700">
                         <div className="flex md:items-center space-x-2 w-[60%]">
                             <div>
                                 <div className="font-bold">{name}</div>
-                                <div className="md:hidden text-gray-400 text-sm">{date}</div>
+                                <div className="md:hidden text-gray-400 text-sm">{diffInWords}</div>
                                 <div className="hidden md:block text-gray-400 text-sm">{name}</div>
                             </div>
                         </div>
@@ -29,7 +29,7 @@ const MyTransactions = ({ data }) => {
                             </div>
                             <div className="hidden md:block text-right w-36">
                                 <div className="text-gray-400 text-sm">Time</div>
-                                <div className="font-bold">{date}</div>
+                                <div className="font-bold">{diffInWords}</div>
                             </div>
 
                         </div>
