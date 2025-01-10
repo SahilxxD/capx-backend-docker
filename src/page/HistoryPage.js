@@ -33,9 +33,14 @@ const HistoryPage = () => {
                     // Return the updated item with the new 'date' field
                     return {
                         ...item,
-                        date: diffInWords, // Update the date field with the calculated difference
+                        diffInWords // Update the date field with the calculated difference
                     };
 
+                }).sort((a, b) => {
+                    const dateA = new Date(a.date);
+                    const dateB = new Date(b.date);
+                    console.log('Comparing:', dateA, dateB); // Debugging line to check sorting
+                    return dateB - dateA; // Sorting using the original Date objects
                 });
                 toast.update(loadingToastId, {
                     render: 'Transaction updated successfully! 🚀',
